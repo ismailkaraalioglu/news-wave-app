@@ -2,13 +2,17 @@ import "../../global.css";
 import { Stack } from "expo-router";
 import { StatusBar } from "expo-status-bar";
 import { SafeAreaProvider } from "react-native-safe-area-context";
+import { Provider } from "react-redux";
+import { store } from "@/stores/store";
 
 const RootLayout = () => {
   return (
-    <SafeAreaProvider>
-      <RootNavigation />
-      <StatusBar style="auto" />
-    </SafeAreaProvider>
+    <Provider store={store}>
+      <SafeAreaProvider>
+        <RootNavigation />
+        <StatusBar style="auto" />
+      </SafeAreaProvider>
+    </Provider>
   );
 };
 
